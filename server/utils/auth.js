@@ -5,8 +5,8 @@ const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
 module.exports = {
-  // function for our authenticated routes
-  authMiddleware: function (req, res, next) {
+  // function for our authenticated routes function (req, res, next)
+  authMiddleware: function ({ req }) {
     // allows token to be sent via  req.query or headers
     // added req.body.token to copy the class activity example
     let token = req.body.token || req.query.token || req.headers.authorization;
